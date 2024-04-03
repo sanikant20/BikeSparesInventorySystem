@@ -27,6 +27,7 @@
         ApplyButtonPosition="@ApplyButtonPosition"
         EditButtonPosition="@EditButtonPosition"
         EditTrigger="@EditTrigger">
+
     <ToolBarContent>
         <MudFab class="me-4" StartIcon="@Icons.Material.Filled.Add" Color="Color.Primary" Label="Add User" DisableElevation="true" OnClick="AddDialog" />
         <MudStack Row="true"> 
@@ -36,6 +37,7 @@
         <MudSpacer />
         <MudTextField @bind-Value="SearchString" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0" Clearable="true"></MudTextField>
     </ToolBarContent>
+
     <HeaderContent>
         <MudTh Style="white-space: nowrap;"><MudTableSortLabel SortBy="new Func<User, object>(x=>x.Id)">ID</MudTableSortLabel></MudTh>
         <MudTh Style="white-space: nowrap;"><MudTableSortLabel SortBy="new Func<User, object>(x=>x.UserName)">User Name</MudTableSortLabel></MudTh>
@@ -47,6 +49,7 @@
         <MudTh Style="white-space: nowrap;"><MudTableSortLabel SortBy="new Func<User, object>(x=>x.CreatedAt)">Created At</MudTableSortLabel></MudTh>
         <MudTh Style="white-space: nowrap;"><MudTableSortLabel SortBy="new Func<User, object>(x=>x.CreatedBy)">Created By</MudTableSortLabel></MudTh>
     </HeaderContent>
+
     <RowTemplate>
         <MudTd Class="row-cols-md-auto" DataLabel="ID"><MudChip>@context.Id</MudChip></MudTd>
         <MudTd DataLabel="User Name">@context.UserName</MudTd>
@@ -68,6 +71,7 @@
             <MudChip>@GetUserName(@context.CreatedBy)</MudChip>
         </MudTd>
     </RowTemplate>
+
     <RowEditingTemplate>
         <MudTd DataLabel="ID"><MudChip>@context.Id</MudChip></MudTd>       
         <MudTd DataLabel="User Name">@context.UserName</MudTd>
@@ -90,9 +94,11 @@
         <MudTd Style="white-space: nowrap;" DataLabel="Created At">@context.CreatedAt</MudTd>
         <MudTd DataLabel="Created By"><MudChip>@context.CreatedBy</MudChip></MudTd>        
     </RowEditingTemplate>
+
     <PagerContent>
         <MudTablePager PageSizeOptions="new int[] { 25, 50, 75, 100}" />
     </PagerContent>
+
 </MudTable>
 
 
